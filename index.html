@@ -9,7 +9,12 @@
 </head>
 <body>
     <head></head>
-    <main id='zhangsan'>
+    
+    <main>
+        
+        <div class="wrapper" id="lwn">
+
+        </div>
 
     </main>
     <footer>
@@ -40,18 +45,29 @@
 
             while(index < keys.length){ //0  1  2
                 div1 = document.createElement('div');   //创建<div>标签
-                zhangsan.appendChild(div1);             //把<div>标签放到 id 为 zhangsan 的属性中
+                lwn.appendChild(div1);             //把<div>标签放到 id 为 lwn 的属性中
                 row = keys[index];      //第一个数组，第二个数组，第三个数组
-                console.log(row);
+
+                div1.className = 'row';
 
                 index2 = 0;
                 while(index2 < row.length){
                     kbd1 = document.createElement('kbd');
-                    kbd1.textContent = row[index2];     //0-10 0-9 0-7
+                    kbd1.textContent = row[index2];     //0-10 0-9 0-7  
                     div1.appendChild(kbd1);
+
+                    img1 = document.createElement('img');
+                    img1.src = 'https://' + hash[row[index2]] + '/favicon.ico';
+                    kbd1.appendChild(img1);
+                    if(img1.src){       //判断一下，有图标就显示，没有就不显示
+                        img1.src = 'https://' + hash[row[index2]] + '/favicon.ico';
+                    }
+
+                    kbd1.className = 'keya';        //相当于 <kbd class='keya'><kbd>  这个很重要
+                    
                     button1 = document.createElement('button');
                     kbd1.appendChild(button1);
-                    button1.textContent = '编辑';
+                    button1.textContent = 'E';
                     button1.id = row[index2];
                     //给button做一个点击事件
                     button1.onclick = function(gaguhigqiergdaf){

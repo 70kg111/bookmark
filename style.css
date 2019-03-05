@@ -1,29 +1,69 @@
 *{margin: 0; padding: 0;}
 
-
-a{
-    text-decoration: none;
+body{
+    height: 100vh;  /* vh = viewport height 当前屏幕的高度*/
+    background-image: url(./img/bg-gray.jpg);
+    background-size: cover;     /*背景图自适应 */
 }
+
+main{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* .wrapper{    透明边框
+    background: rgba(255, 255, 255,30%);    
+    border-radius: 10px;
+
+}  */
+
 kbd{
-    border: solid 1px red;
+    border: solid 1px black;
     width: 4em;
     height: 4em;
     display: inline-block;
-    margin: 0 1px 0 1px;
+    margin: 2px 2px;
     text-transform: uppercase;
-    font-size: 1em;
     position: relative;
+    font-family: Arial, Helvetica, sans-serif;
 }
+
+.keya{
+    width: 50px;    /*高度，宽度*/
+    height: 45px;
+    background: linear-gradient(to bottom, #292929 0%,#111111 100%);    /*背景色渐变*/
+    color: #ffffff;             /*文字颜色*/
+    border: 1px solid black;    /*边框*/
+    border-radius: 15%;           /*边框边角缩进*/
+    box-shadow: 1px 1px rgba(113, 113, 113,50%);    /*边框旁的阴影*/
+    font-size: 17px;              /*字体大小*/
+    
+    /*三行居中代码，记住即可*/
+    display: inline-flex;       /*弹性盒子*/
+    align-items:center;         /*垂直居中*/
+    justify-content: center;    /*水平居中*/
+}
+
 kbd > button{
     position:absolute;
-    right: 0;
-    bottom: 0;
+    right: 2px;
+    bottom: 2px;
+    border-radius: 3px;
     display: none;
 } 
+
 kbd:hover > button{
     display:inline-block;
 }
-main{
-    text-align: center;
-    
+
+kbd > img{
+    width: 15px;
+    height: 15px;
+    background-size: cover;
+    position: absolute;
+    left: 2px;
+    bottom: 2px;
 }
